@@ -1,0 +1,198 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Licorice&display=swap");
+@font-face {
+  font-family: "Pretendard Variable";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff2") format("woff2"), url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+}
+/*
+Pretendard
+Abril Fatface
+Amiri
+Licorice
+*/
+.parallax__item {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+#title_wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 16px;
+}
+#title_wrapper h1 {
+  text-align: center;
+  font-family: "Abril Fatface", sans-serif;
+  font-size: 7em;
+}
+#title_wrapper svg {
+  overflow: visible;
+}
+#title_wrapper svg text {
+  font-family: "Licorice", sans-serif;
+  font-size: 12em;
+  fill: transparent;
+  stroke: #6D1919;
+  stroke-width: 1px;
+  stroke-dashoffset: 1000;
+  stroke-dasharray: 1000;
+  animation: stroke 3s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  70% {
+    fill: #6D1919;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #6D1919;
+  }
+}
+
+#about {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#about .about_item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  font-family: Pretendard, Noto Sans KR, sans-serif;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#about .about_item:not(last-child) {
+  background-color: #1d2024;
+}
+#about .about_item p {
+  width: 50%;
+  color: rgb(170, 170, 170);
+  line-height: 2rem;
+}
+#about .about_item p span {
+  position: relative;
+  transition: all 0.5s ease;
+  color: #2d2d2d;
+  cursor: pointer;
+}
+#about .about_item p span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 0%;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  transition: width 0.5s ease;
+}
+#about .about_item p span:hover {
+  color: rgb(255, 255, 255);
+}
+#about .about_item p span:hover::after {
+  width: 100%;
+}
+#about .about_item .hover_img {
+  width: 40%;
+  opacity: 0;
+  transform: scale(0.9); /* 처음에는 약간 작게 */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* transform도 트랜지션 포함 */
+  pointer-events: none; /* 숨겨진 상태에서는 상호작용 방지 */
+}
+#about .about_item .hover_img.active {
+  opacity: 1;
+  transform: scale(1); /* 원래 크기로 확장 */
+}
+#about .about_item .hover_img img {
+  width: 100%;
+  height: auto;
+  display: block; /* 이미지를 확실히 블록 요소로 설정 */
+}
+
+#skill .split {
+  font-family: "Abril Fatface", sans-serif;
+  text-align: center;
+  font-size: 5rem;
+  height: 100vh;
+  line-height: 100vh;
+}
+
+#skill_list .skill_list_item {
+  position: relative;
+  display: flex;
+}
+#skill_list .skill_list_item:nth-child(2) {
+  flex-direction: row-reverse;
+}
+#skill_list .skill_list_item .skill_list_sub {
+  width: 50%;
+  height: 100vh;
+  line-height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+#skill_list .skill_list_item .skill_list_sub img {
+  width: 100%;
+}
+#skill_list .skill_list_item .skill_list_content {
+  width: 50%;
+}
+#skill_list .skill_list_item .skill_list_content li {
+  font-family: "Abril Fatface", sans-serif;
+  height: 100vh;
+  font-size: 3rem;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+#skill_list .skill_list_item .skill_list_content li p {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+#skill_list .skill_list_item .skill_list_content li span {
+  position: absolute;
+  bottom: 0%;
+  left: 10%;
+  z-index: -1;
+  font-size: 10rem;
+  color: rgba(10, 10, 10, 0.205);
+}

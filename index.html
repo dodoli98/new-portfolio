@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.min.js"></script>
+
+
+    <script src="./js/main.js"></script>
+
+    <title>Kim Seon Gyu's portfolio</title>
+</head>
+
+<body>
+    <main>
+        <!-- home -->
+        <section id="home" data-bg="#fff5eb" class="parallax__item">
+            <div id="title_wrapper">
+                <h1>KIM SEON GYU's</h1>
+                <svg viewBox="0 0 900 200">
+                    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" fill="none">
+                        PortFolio
+                    </text>
+                </svg>
+
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" data-bg="#1d2024" class="parallax__item">
+            <div class="about_item t1">
+                <p>
+                    안녕하세요, 
+                </p>
+
+            </div>
+            <div class="about_item t2">
+                <p>
+                    열정과 창의력을 바탕으로 새로운 도전을 좋아하는
+                    신입 <span class="about_hover_text">웹 퍼블리셔 김선규</span>입니다.
+                    새로운 기술과 트렌드를 배우는 데 즐거움을 느끼며, 
+                    이를 통해 가치 있는 결과물을 만들어내는 데 힘쓰고자 합니다. 
+                </p>
+                <div class="hover_img">
+                    <img src="./image/hoverImage1.png">
+                </div>
+            </div>
+
+            <div class="about_item t3">
+                <p>
+                    <span class="about_hover_text">논리와 목적에 맞는 개발</span>이 중요하다고 생각합니다.
+                    소통을 통해 논리적이고 목적에 부합하는 개발을 완성하는 데 최선을 다하겠습니다.
+                </p>
+                <div class="hover_img">
+                    <img src="./image/hoverImage2.png">
+                </div>
+            </div>
+           
+        </section>
+
+        <!-- Skill -->
+        <section id="skill" data-bg="#fff5eb" class="parallax__item">
+            <p class="split">I can do this!</p>
+
+            <ul id="skill_list">
+                <li class="skill_list_item">
+                    <div class="skill_list_sub">
+                        <img src="./image/hoverImage1.png"/>
+                    </div>
+
+                    <ul class="skill_list_content">
+                        <li>
+                            <p>
+                                HTML
+                                <span class="skillPercent" data-percent="95">0%</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                CSS
+                                <span class="skillPercent" data-percent="90">0%</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                JavaScript
+                                <span class="skillPercent" data-percent="90">0%</span>
+                            </p>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="skill_list_item">
+                    <div class="skill_list_sub">
+                        <img src="./image/hoverImage1.png"/>
+                    </div>
+
+                    <ul class="skill_list_content">
+                        <li>
+                            <p>
+                                React
+                                <span class="skillPercent" data-percent="85">0%</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Photoshop
+                                <span class="skillPercent" data-percent="90">0%</span>
+                            </p>
+                        </li>
+                       
+                    </ul>
+                </li>
+            </ul>
+           
+        </section>
+
+
+        <!-- WORKS -->
+        <!-- <section id="works">
+            <h2 class="section_title">
+                WORKS
+            </h2>
+            <div id="works_list">
+                <div class="work_item">
+                    <div>
+                        <h3>
+                            <a href="project/chupachups/index.html">
+                                ChupaChups
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>
+                                HTML, CSS, Vanilla Js
+                            </li>
+                            <li>
+                                Publishing, Design 100%
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="project/chupachups/index.html">
+                            <img src="./image/chupachups.png" alt="ChupaChups" />
+                        </a>
+                    </div>
+                </div>
+                <div class="work_item">
+                    <div>
+                        <h3>
+                            <a href="project/parkwood/index.html">
+                                ParkWood
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>
+                                HTML, CSS, Vanilla Js
+                            </li>
+                            <li>
+                                Publishing, Design 100%
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="project/parkwood/index.html">
+                            <img src="./image/parkwood.png" alt="parkwood" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="work_item">
+                    <div>
+                        <h3>
+                            <a href="project/parkwood/index.html">
+                                MegaBox (진행중)
+                            </a>
+                        </h3>
+                        <ul>
+                            <li>
+                                React
+                            </li>
+                            <li>
+                                Publishing, Design 100%
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <a href="https://dodoli98.github.io/megabox/">
+                            <img src="./image/megabox.png" alt="parkwood" />
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section> -->
+
+
+
+        <!-- toy project -->
+        <!-- <section id="toy_project">
+            <h2 class="section_title">
+                Toy project
+            </h2>
+            <ul id="toy_project_list">
+                <li>
+                    <div class="works_title">
+                        <h3>
+                            <a href="https://dodoli98.github.io/howweather/">
+                                How Weather
+                            </a>
+                        </h3>
+                        <button class="works_expand_btn">
+                            <img src="image/Vector.png" alt="Expand" />
+                        </button>
+                    </div>
+
+                    <div class="works_content">
+                        <p>
+                            React와 OpenWeather API를 이용해 만든 현재 날씨 앱입니다.
+                            API요청은 axios를 사용했고 scss를 사용해 스타일 적용을 했습니다.
+                            useEffect와 setInterval을 사용하여 페이지에 현재 시간을 실시간으로 표시합니다.
+
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="works_title">
+                        <h3>
+                            <a href="project/minigame/index.html">
+                                2D Pixel mini Game
+                            </a>
+                        </h3>
+                        <button class="works_expand_btn">
+                            <img src="image/Vector.png" alt="Expand" />
+                        </button>
+                    </div>
+
+                    <div class="works_content">
+                        <p>
+                            Canvas와 Vanilla JavaScript만을 활용하여 만든 미니 게임입니다.
+                            requestAnimationFrame을 통한 부드러운 애니메이션을 구현했습니다.
+                            키보드 이벤트 처리를 통해 실시간 사용자 입력에 반응하며,
+                            랜덤 요소를 활용해 좀 더 다이나믹한 플레이를 만들었습니다.
+                            필요한 기능은 함수로 분리해 만든뒤 main함수에서 무한루프가 되도록 로직을 만들었습니다.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="works_title">
+                        <h3>
+                            <a href="project/dailytodo/index.html">
+                                Daily Todo
+                            </a>
+                        </h3>
+                        <button class="works_expand_btn">
+                            <img src="image/Vector.png" alt="Expand" />
+                        </button>
+                    </div>
+
+                    <div class="works_content">
+                        <p>
+                            Vanilla JavaScript로 구현한 할 일 관리 웹 애플리케이션입니다. Local Storage를 활용하여 데이터를
+                            저장하도록 하였습니다. 주요 기능으로는 할 일 추가, 완료 체크, 삭제가 있으며,
+                            IME 입력 이슈를 해결하여 다국어를 지원합니다. 중복 항목 방지 기능을
+                            통해 리스트의 일관성을 유지하도록 만들었습니다.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section> -->
+
+
+        <!-- CONTCT -->
+        <!-- <section id="contact">
+            <h2 class="section_title">
+                CONTACT
+            </h2>
+
+            <ul>
+                <li>
+                    KIM SEON GYU
+                </li>
+                <li>
+                    010-7197-9457
+                </li>
+                <li>
+                    dodoli98@naver.com
+                </li>
+                <li>
+                    <button>
+                        <a href="https://github.com/dodoli98">
+                            <img src="image/git.png" alt="github" />
+                        </a>
+                    </button>
+                    <button>
+                        <a href="https://dodoli.tistory.com">
+                            <img src="image/tistory.png" alt="tistory" />
+                        </a>
+                    </button>
+                </li>
+            </ul>
+        </section> -->
+    </main>
+
+
+    
+    <script src="./js/main_gsap.js"></script>
+</body>
+
+</html>

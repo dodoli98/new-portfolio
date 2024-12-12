@@ -20,6 +20,11 @@ Licorice
   box-sizing: border-box;
 }
 
+body {
+  --bg-color: #fff5eb;
+  background-color: var(--bg-color);
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   background-color: #F5F5F5;
@@ -145,7 +150,7 @@ Licorice
   display: block; /* 이미지를 확실히 블록 요소로 설정 */
 }
 
-#skill .split {
+.split {
   font-family: "Abril Fatface", sans-serif;
   text-align: center;
   font-size: 5rem;
@@ -195,4 +200,40 @@ Licorice
   z-index: -1;
   font-size: 10rem;
   color: rgba(10, 10, 10, 0.205);
+}
+
+#works {
+  overflow: hidden;
+}
+
+#works_wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 500%;
+}
+
+.works_item {
+  width: 100%;
+}
+
+.works_item:not(:first-child) {
+  display: flex;
+}
+.works_item:not(:first-child) .works_content {
+  width: 50%;
+}
+.works_item:not(:first-child) .works_img {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.works_item:not(:first-child) .works_img a {
+  border-radius: 0 25% 0 25%;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+}
+.works_item:not(:first-child) .works_img a img {
+  width: 100%;
+  height: auto;
 }

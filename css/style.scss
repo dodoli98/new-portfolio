@@ -28,8 +28,8 @@ $globalPadding : 0 10%;
 }
 
 body {
-    // --bg-color : #fff5eb;
-    // background-color: var(--bg-color);
+    --bg-color : #fff5eb;
+    background-color: var(--bg-color);
 }
 // common design  ===================
 
@@ -195,7 +195,6 @@ body {
     }
 }
 
-#skill {
     .split {
         font-family: $title;
         text-align: center;
@@ -203,7 +202,6 @@ body {
         height: 100vh;
         line-height: 100vh;
     }
-}
 
 #skill_list {
     .skill_list_item {
@@ -262,3 +260,45 @@ body {
     }
 }
 
+
+// works  ===================
+
+
+#works {
+    overflow: hidden;
+}
+#works_wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 500%;
+}
+.works_item {
+    width: 100%;
+}
+
+.works_item:not(:first-child) {
+    display: flex;
+
+    .works_content {
+        width: 50%;
+    }
+    .works_img {
+        width: 50%;
+       
+        display: flex;
+        align-items: center;
+
+        a {
+            border-radius: 0 25% 0 25% ;
+            overflow: hidden;
+            width: 100%;
+            display: block;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+  
+}

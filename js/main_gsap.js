@@ -11,25 +11,25 @@ requestAnimationFrame(raf)
 
 // =============================== 배경색 에니메이션
 
-gsap.utils.toArray(".parallax__item").forEach((item) => {
-    let color = item.getAttribute("data-bg");
+// gsap.utils.toArray(".parallax__item").forEach((item) => {
+//     let color = item.getAttribute("data-bg");
 
-    ScrollTrigger.create({
-        trigger: item,
-        start: "top 50%",
-        end: "bottom 5%",
-        markers: true,
+//     ScrollTrigger.create({
+//         trigger: item,
+//         start: "top 50%",
+//         end: "bottom 5%",
+//         markers: true,
 
-        onEnter: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.4
-        }),
-        onEnterBack: () => gsap.to("body", {
-            backgroundColor: color,
-            duration: 1.4
-        }),
-    });
-});
+//         onEnter: () => gsap.to("body", {
+//             backgroundColor: color,
+//             duration: 1.4
+//         }),
+//         onEnterBack: () => gsap.to("body", {
+//             backgroundColor: color,
+//             duration: 1.4
+//         }),
+//     });
+// });
 
 
 
@@ -43,7 +43,7 @@ ScrollTrigger.create({
     animation: aboutAni,
     trigger: "#about",
     start: "top top",
-    end: "+=3000",
+    end: "+=4000",
     scrub: true,
     pin: true,
     anticipatePin: 1
@@ -52,7 +52,7 @@ ScrollTrigger.create({
 
 
 
-// =============================== skill
+// =============================== 텍스트 에니메이션 
 
 // 텍스트 에니메이션 시작
 const targets = gsap.utils.toArray(".split");
@@ -62,7 +62,7 @@ targets.forEach((target) => {
     let words = SplitClient.words;
 
     gsap.from(words, {
-        yPercent: 100,
+        yPercent: -40,
         opacity: 0,
         duration: 1,
         ease: "circ.out",
@@ -112,4 +112,39 @@ document.querySelectorAll(".skillPercent").forEach((item) => {
 // skill 숫자 에니메이션 끝
 
 
-  
+// const horizontal = document.querySelector("#horizontal");
+// const sections = gsap.utils.toArray("#horizontal > section");
+
+// let scrollTween = gsap.to(sections, {
+//     xPercent: -100 * (sections.length - 1),
+//     ease: "none",
+//     scrollTrigger: {
+//         trigger: horizontal,
+//         start: "top top",
+//         end: () =>  "+=" + (horizontal.offsetWidth - innerWidth),
+//         pin: true,
+//         anticipatePin: 1
+//         scrub: 1,
+//         invalidateOnRefresh: true,
+//     }
+// });
+// =============================== works
+
+// 가로애니메이션 scrollTween을 사용해야 다른 애니메이션과 연동 가능
+// gsap.utils.toArray  GSAP 라이브러리에서 제공하는 유틸리티로, 선택자를 배열로 변환
+const worksWrapper = document.getElementById("works_wrapper");
+const worksItem = gsap.utils.toArray(".works_item")
+
+let scrollTween = gsap.to(worksItem, {
+    xPercent: -100 * (worksItem.length - 1),
+    ease: "none",
+    scrollTrigger: {
+        trigger: worksWrapper,
+        start: "top top",
+        end: () =>  "+=" + (worksWrapper.offsetWidth - innerWidth),
+        pin: true,
+        anticipatePin: 1,
+        scrub: 1,
+        invalidateOnRefresh: true,
+    }
+});

@@ -146,5 +146,10 @@ let scrollTween = gsap.to(worksItem, {
         anticipatePin: 1,
         scrub: 1,
         invalidateOnRefresh: true,
+        snap: {
+            snapTo: 1 / (worksItem.length - 1), // 각 항목으로 바로 스냅
+            duration: 0, // 스냅 애니메이션 없이 즉각 이동
+            ease: "none" // 이징 없이 바로 스냅
+        }
     }
 });

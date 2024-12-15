@@ -51,6 +51,7 @@ body {
   text-align: center;
   font-family: "Abril Fatface", sans-serif;
   font-size: 7em;
+  color: white;
 }
 #title_wrapper svg {
   overflow: visible;
@@ -60,22 +61,36 @@ body {
   font-size: 12em;
   fill: transparent;
   stroke: #6D1919;
-  stroke-width: 1px;
+  stroke-width: 2px;
   stroke-dashoffset: 1000;
   stroke-dasharray: 1000;
   animation: stroke 3s linear;
   animation-fill-mode: forwards;
 }
+#title_wrapper .home_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+#title_wrapper .home_video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 @keyframes stroke {
   0% {
+    fill: #000000;
     stroke-dashoffset: 1000;
   }
   70% {
-    fill: #6D1919;
+    fill: #606060;
   }
   100% {
     stroke-dashoffset: 0;
-    fill: #6D1919;
+    fill: #ffffff;
   }
 }
 
@@ -136,18 +151,23 @@ body {
 #about .about_item .hover_img {
   width: 40%;
   opacity: 0;
-  transform: scale(0.9); /* 처음에는 약간 작게 */
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* transform도 트랜지션 포함 */
-  pointer-events: none; /* 숨겨진 상태에서는 상호작용 방지 */
+  transform: scale(0.9);
+  /* 처음에는 약간 작게 */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  /* transform도 트랜지션 포함 */
+  pointer-events: none;
+  /* 숨겨진 상태에서는 상호작용 방지 */
 }
 #about .about_item .hover_img.active {
   opacity: 1;
-  transform: scale(1); /* 원래 크기로 확장 */
+  transform: scale(1);
+  /* 원래 크기로 확장 */
 }
 #about .about_item .hover_img img {
   width: 100%;
   height: auto;
-  display: block; /* 이미지를 확실히 블록 요소로 설정 */
+  display: block;
+  /* 이미지를 확실히 블록 요소로 설정 */
 }
 
 .split {

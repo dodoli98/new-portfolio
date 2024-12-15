@@ -31,6 +31,23 @@ requestAnimationFrame(raf)
 //     });
 // });
 
+// =============================== home
+const homeAni = gsap.timeline();
+homeAni.to("#home .home_video", {
+    autoAlpha: 0, 
+    scale: 2,
+})
+
+ScrollTrigger.create({
+    animation: homeAni,
+    trigger: "#home",
+    start: "top top",
+    end: "+=2000",
+    scrub: true,
+    pin: true,
+    markers: false,
+    anticipatePin: 1,
+});
 
 
 // =============================== about 텍스트 에니메이션
@@ -103,31 +120,14 @@ document.querySelectorAll(".skillPercent").forEach((item) => {
 
         scrollTrigger: {
             trigger: item,
-            start: "top 50%",
-            end: "bottom 50%",
+            start: "top 80%",
+            end: "bottom 70%",
             scrub: true
         }
     })
 });
 // skill 숫자 에니메이션 끝
 
-
-// const horizontal = document.querySelector("#horizontal");
-// const sections = gsap.utils.toArray("#horizontal > section");
-
-// let scrollTween = gsap.to(sections, {
-//     xPercent: -100 * (sections.length - 1),
-//     ease: "none",
-//     scrollTrigger: {
-//         trigger: horizontal,
-//         start: "top top",
-//         end: () =>  "+=" + (horizontal.offsetWidth - innerWidth),
-//         pin: true,
-//         anticipatePin: 1
-//         scrub: 1,
-//         invalidateOnRefresh: true,
-//     }
-// });
 // =============================== works
 
 // 가로애니메이션 scrollTween을 사용해야 다른 애니메이션과 연동 가능
@@ -140,16 +140,16 @@ let scrollTween = gsap.to(worksItem, {
     ease: "none",
     scrollTrigger: {
         trigger: worksWrapper,
-        start: "top top",
+        start: () => worksWrapper.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
         end: () =>  "+=" + (worksWrapper.offsetWidth - innerWidth),
         pin: true,
         anticipatePin: 1,
         scrub: 1,
         invalidateOnRefresh: true,
         snap: {
-            snapTo: 1 / (worksItem.length - 1), // 각 항목으로 바로 스냅
-            duration: 0, // 스냅 애니메이션 없이 즉각 이동
-            ease: "none" // 이징 없이 바로 스냅
+            snapTo: 1 / (worksItem.length - 1),
+            inertia: false,
+            duration: {min: 0.1, max: 0.1}
         }
     }
 });

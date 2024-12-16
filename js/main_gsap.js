@@ -153,3 +153,50 @@ let scrollTween = gsap.to(worksItem, {
         }
     }
 });
+
+
+const spilt2 = gsap.utils.toArray(".split2");
+
+spilt2.forEach((spilt2) => {
+    let SplitClient = new SplitType(spilt2, { type: "words" });
+    let words = SplitClient.words;
+
+    gsap.from(words, {
+        yPercent: -40,
+        opacity: 0,
+        duration: 1,
+        ease: "circ.out",
+        stagger: {
+            amount: 1,
+            from: "random"
+        },
+        scrollTrigger: {
+            trigger: spilt2,
+            containerAnimation: scrollTween,
+            start: "top: 70%",
+            end: "+=400",
+            markers: true
+        }
+    });
+});
+
+
+
+// =============================== home
+// 초기 상태 설정
+gsap.set("#contact .contact_video", { scale: 2, autoAlpha: 0 });
+
+const contactAni = gsap.timeline();
+contactAni
+  .to("#contact .contact_video", { scale: 1, autoAlpha: 1, duration: 2 })
+
+ScrollTrigger.create({
+  animation: contactAni,
+  trigger: "#contact",
+  start: "top top",
+  end: "+=2000",
+  scrub: true,
+  pin: true,
+  markers: true,
+  anticipatePin: 1,
+});

@@ -30,6 +30,7 @@ $globalPadding : 0 10%;
 body {
     --bg-color: #fff5eb;
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 // common design  ===================
@@ -218,13 +219,15 @@ body {
     }
 }
 
-.split {
+.split, .split2 {
     font-family: $title;
     text-align: center;
     font-size: 5rem;
     height: 100vh;
     line-height: 100vh;
+    width: 100%;
 }
+
 
 #skill_list {
     .skill_list_item {
@@ -296,7 +299,7 @@ body {
 #works_wrapper {
     display: flex;
     flex-wrap: nowrap;
-    width: 500%;
+    width: 600%;
 }
 
 .works_item {
@@ -372,5 +375,71 @@ body {
         }
     }
 
+
+}
+
+
+// CONTCT  ===================
+#contact {
+    color: white;
+    height: 100vh;
+    position: relative;
+
+    .contact_video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: $subTitle;
+        font-size: 1.6rem;
+        gap: 2rem;
+        li {
+            cursor: default;
+
+            button {
+                height: 50px;
+
+                a {
+                    height: 100%;
+                    display: inline-block;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                        transition: 0.5s;
+
+                        &:hover {
+                            scale: 1.2;
+                        }
+                    }
+                }
+            }
+
+            button:not(:last-child) {
+                margin-right: 1rem;
+            }
+
+
+        }
+
+      
+
+
+    }
 
 }

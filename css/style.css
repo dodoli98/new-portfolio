@@ -23,6 +23,7 @@ Licorice
 body {
   --bg-color: #fff5eb;
   background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -170,12 +171,13 @@ body {
   /* 이미지를 확실히 블록 요소로 설정 */
 }
 
-.split {
+.split, .split2 {
   font-family: "Abril Fatface", sans-serif;
   text-align: center;
   font-size: 5rem;
   height: 100vh;
   line-height: 100vh;
+  width: 100%;
 }
 
 #skill_list .skill_list_item {
@@ -229,7 +231,7 @@ body {
 #works_wrapper {
   display: flex;
   flex-wrap: nowrap;
-  width: 500%;
+  width: 600%;
 }
 
 .works_item {
@@ -291,4 +293,54 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+#contact {
+  color: white;
+  height: 100vh;
+  position: relative;
+}
+#contact .contact_video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+#contact .contact_video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#contact ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Amiri", sans-serif;
+  font-size: 1.6rem;
+  gap: 2rem;
+}
+#contact ul li {
+  cursor: default;
+}
+#contact ul li button {
+  height: 50px;
+}
+#contact ul li button a {
+  height: 100%;
+  display: inline-block;
+}
+#contact ul li button a img {
+  height: 100%;
+  width: auto;
+  transition: 0.5s;
+}
+#contact ul li button a img:hover {
+  scale: 1.2;
+}
+#contact ul li button:not(:last-child) {
+  margin-right: 1rem;
 }
